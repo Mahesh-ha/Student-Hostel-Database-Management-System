@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<style>
+		div {
+			display: inline-grid;
+		}
+		input[type=text],[type=date],[type=email],[type=number],[type=textarea], select {
+		    width: 100%;
+		    padding: 12px 20px;
+		    margin: 8px 0;
+		    display: inline-block;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+		    box-sizing: border-box;
+		}
+		input[type=date]{
+		    width: 100%;
+		    padding: 9px 20px;
+		    margin: 10px 0;
+		    display: inline-block;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+		    box-sizing: border-box;
+		}
+		input[type=submit] {
+		    width: 50%;
+		    background-color: #4CAF50;
+		    color: white;
+		    padding: 14px 20px;
+		    margin: 8px 0;
+		    border: none;
+		    border-radius: 4px;
+		    cursor: pointer;
+		}
+		input[type=password]{
+		    width: 40%;
+		    padding: 12px 20px;
+		    margin: 8px 0;
+		    display: inline-block;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+		    box-sizing: border-box;
+		}
+		fieldset{
+			background-color:  #f2f2f2;
+		}
+		.button {
+		    background-color: #4CAF50; /* Green */
+		    border: none;
+		    color: white;
+		    padding: 15px 32px;
+		    text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    font-size: 16px;
+		    margin: 4px 2px;
+		    cursor: pointer;
+		    -webkit-transition-duration: 0.4s; /* Safari */
+		    transition-duration: 0.4s;
+		}
+
+		.button2:hover {
+		    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+		}
+	</style>
+	<script type="text/javascript">
+	function valid()
+	{
+		if(document.registration.password.value!= document.registration.cpassword.value)
+		{	
+			alert("Password and Re-Type Password Field do not match  !!");
+			document.registration.cpassword.focus();
+			return false;
+		}
+		else{alert('Successfully Registered');
+		return true;}
+	
+	}
+	</script>
+</head>
+<body style="">
+	<div style="width: 1200px;height: 85px;background-color: black;margin-right: 1px;"><p align="center" style="font-size: 40px;color:red;margin-top: 20px;">REGISTRATION FORM</p></div>
+<form method="POST" action="insert.php" name="registration" onSubmit="return valid()";>
+	<div>
+		<fieldset style="width :533px;height: 1064px">
+			<h1 style="color: green;">Personal Details</h1>
+			<label>Registration No <input type="number" name="Reg_no" required placeholder="Enter Your Registration No"></label>
+			<label>First Name <input type="text" name="fname" required placeholder="Enter Your Name"></label>	
+			<label>Last Name <input type="text" name="lname" required placeholder="Enter Your Name"></label>	
+					
+
+			<label>Date Of Birth <input type="date" name="dob"></label>
+			<label>Mobile Number<input type="number" maxlength="10" name="smobile1" required=""  placeholder="Mobile Number" ></label>
+			<label>Emergency Contact <input type="number" maxlength="10" name="smobile2" placeholder="Mobile Number" ></label>
+          	<label>Email-ID<input type="email" name="email" required=""  placeholder="Email-ID"></label><br>
+          	<label>Address <input type="textarea" name="saddress" placeholder="Address"></label>
+          	<label>City <input type="text" name="city" placeholder="City" ></label>
+          	<label>
+          		State
+          		<select name="state">
+          			<option>Select State</option>
+          			<option>KA</option>
+          			<option>AP</option>
+          			<option>MH</option>
+          			<option>HP</option>
+          			<option>UP</option>
+          			<option>WB</option>
+          			<option>TN</option>
+          			<option>DL</option>
+          			<option>PB</option>
+          			<option>MP</option>
+          		</select>
+          	</label>
+          	<label>Pin Code <input type="number" name="pincode" placeholder="Pin Code" ></label>
+   		</fieldset>
+	</div>
+
+	<div>
+		<fieldset style="width: 598px; height: 97.6%">
+			<h1 style="color: green;">Educational Details</h1>
+			<label>
+				Department
+				<select name="Dname" required="">
+					<option>CSE</option>
+					<option>ECE</option>
+					<option>EEE</option>
+					<option>BT</option>
+					<option>ME</option>
+					<option>CV</option>
+				</select>
+			</label>
+			<label>
+				Year Of Admission
+				<select name="year" required="">
+					<option>2013</option>
+					<option>2014</option>
+					<option>2015</option>
+					<option>2016</option>
+					<option>2017</option>
+					<option>2018</option>
+				</select>
+			</label>
+			<label>SRN <input type="text" name="srn" required placeholder="Enter Your SRN"></label><br>
+		
+			
+			<h1 style="color:green;">Parent Details</h1>
+			<label>Parent Name <input type="text" name="pname" required placeholder="Enter Parent Name"></label>
+			<label>Mobile Number<input type="number" maxlength="10" name="pmobile1" required=""  placeholder="Mobile Number" ></label>
+			<label>Mobile Number 2<input type="number" maxlength="10" name="pmobile2" placeholder="Mobile Number" ></label>
+			<label>Parent Address <input type="textarea" name="paddress" placeholder="paddress" ></label>
+		
+		
+			<h1 style="color:green;">Guardian Details</h1>
+			<label>Guardian Name <input type="text" name="gname" required placeholder="Enter Guardian Name"></label>
+			<label>Mobile Number<input type="number" maxlength="10" name="gmobile1" required=""  placeholder="Mobile Number" ></label>
+			<label>Mobile Number 2<input type="number" maxlength="10" name="gmobile2" placeholder="Mobile Number" ></label>
+			<label>Guardian Address <input type="textarea" name="gaddress" placeholder="Address" ></label>
+		</fieldset>
+	</div>				
+		
+	
+
+	<div>
+		<fieldset style="width: 1165px;">
+			<center>
+				<label>Password &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;<input type="password" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required></label><br>
+				<label>Confirm-Password &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;<input type="password" name="cpassword" placeholder="Reenter-Password"></label><br>
+				<input type="submit" name="submit" class="button button2" style="vertical-align:middle; ">
+			</center>
+		</fieldset>
+	</div>
+</form>
+</body>
+</html>
